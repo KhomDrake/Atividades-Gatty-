@@ -1,0 +1,28 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+
+    <script language="javascript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.js"></script>
+    <script language="javascript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/addons/p5.dom.js"></script>
+    <title>Algoritmo - Atividade </title>
+</head>
+<body>
+    <p> Numero 1: <input type="number" id="one"> </p>
+    <p> Numero 2:<input type="number" id="two"> </p>
+    <p> Numero 3:<input type="number" id="three"> </p>
+    <p> Numero 4:<input type="number" id="four"> </p>
+    <button onclick="Calculate()"> Calcular</button>
+    <p id="sumSquare"></p>
+    <script>
+        function Calculate() {
+            let one,two,three,four;
+            one = parseInt(document.getElementById("one").value);
+            two = parseInt(document.getElementById("two").value);
+            three = parseInt(document.getElementById("three").value);
+            four = parseInt(document.getElementById("four").value);
+            document.getElementById("resultSquare").innerHTML = Math.pow(one, 2) + Math.pow(two, 2) + Math.pow(three, 2) + Math.pow(four, 2);
+        }
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,28 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+
+    <script language="javascript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.js"></script>
+    <script language="javascript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/addons/p5.dom.js"></script>
+    <title>Algoritmo - Atividade </title>
+</head>
+<body>
+  <p> Data de Nascimento: <input type="number" id="dia" size="2"> / <input type="number" id="mes" size="1"> / <input type="number" id="ano" size="1"> </p>
+  <p>Sobrenome: <input type="text" id="sobre"> </p>
+  <button type="button" onclick="Inform()">Informar</button>
+  <p id="date"></p>
+  <p id="nome"></p>
+  <script>
+      function Inform()
+      {
+        let d, m, y;
+        d = document.getElementById("dia").value;
+        m = document.getElementById("mes").value;
+        y = document.getElementById("ano").value;
+        let name = document.getElementById("sobre").value;
+        document.getElementById("date").innerHTML = d + "/" + m + "/" + y;
+        document.getElementById("nome").innerHTML = name;
+      }
+  </script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+
+    <script language="javascript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.js"></script>
+    <script language="javascript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/addons/p5.dom.js"></script>
+    <title>Algoritmo - Atividade </title>
+</head>
+<body>
+   <p>Informe a quantidade de horas: <input type="number" id="horas" value="5"> </p>
+   <button type="button" onclick="Calculate()">Transformar em Milissegundos</button>
+   <p id="mili"></p>
+   <script>
+      function Calculate()
+      {
+        let horas = parseInt(document.getElementById("horas").value);
+        document.getElementById("mili").innerHTML = horas * 60 * 60 * 1000;
+      }
+   </script>
+</body>
+</html>

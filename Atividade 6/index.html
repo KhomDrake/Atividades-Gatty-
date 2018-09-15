@@ -1,0 +1,21 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+
+    <script language="javascript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.js"></script>
+    <script language="javascript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/addons/p5.dom.js"></script>
+    <title>Algoritmo - Atividade </title>
+</head>
+<body>
+  <p> Diga seu nome: <input type="text" id="name" value="vinicius"></p>
+  <button type="button" onclick="SayName()"> Informar Nome</button>
+  <p id="sayName"></p>
+  <script type="text/javascript">
+      function SayName()
+      {
+          let name = document.getElementById('name').value;
+          document.getElementById("sayName").innerHTML = name;
+      }
+  </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Atividade</title>
+</head>
+<body>
+    <p> Peso Peixe: <input type="number" id="weight"></p>
+    <p> Peso Referencial: 50 Kg </p>
+    <p> Multa referencial: 4,00 p/Kg </p>
+    <p> Estado: SP </p>
+
+    <button onclick="calcularMulta()" >Calcular Multa</button>
+    <p id="multa"></p>
+    <script>
+    
+    function calcularMulta()
+    {
+        let wieght = parseFloat(document.getElementById("weight").value);
+        let pesoRef = 50;
+        let multaRef = 4;
+        if(wieght < pesoRef + 1 && wieght >= 0.1)
+            document.getElementById("multa").innerHTML = 0;
+        else if(wieght < 0.1 || wieght > 100)
+            document.getElementById("multa").innerHTML = "Erro";
+        else 
+            document.getElementById("multa").innerHTML = (parseInt(wieght) - pesoRef) * multaRef;
+
+    }
+    </script>
+</body>
+</html>

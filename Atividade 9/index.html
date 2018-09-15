@@ -1,0 +1,20 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+
+    <script language="javascript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.js"></script>
+    <script language="javascript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/addons/p5.dom.js"></script>
+    <title>Algoritmo - Atividade </title>
+</head>
+<body>
+    <p>Valor Cosseno: <input type="number" id="c"> </p>
+    <p>Valor Seno: <input type="number" id="s"> </p>
+    <button type="button" onclick="Tangente()"> Calcular Tangente</button>
+    <p id="tan"></p>
+    <script>
+      let c = parseFloat(getElementById("c").value);
+      let s = parseFloat(getElementById("c").value);
+      document.getElementById("c").innerHTML = s/c;
+    </script>
+</body>
+</html>

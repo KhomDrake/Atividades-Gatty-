@@ -1,0 +1,212 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+
+    <script language="javascript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.js"></script>
+    <script language="javascript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/addons/p5.dom.js"></script>
+    <title>Algoritmo - Atividade 1, 2, 3 e 4</title>
+</head>
+<body>
+
+  <label for=""> </label>
+
+  <input type="text" placeholder="asdasda">
+
+  <script type="text/javascript">
+  let buttons = [];
+  let elementsActivity = [];
+
+  function setup()
+  {
+    noCanvas();
+    buttons.push(createButton("Atividade 1"));
+    createElement('br');
+    createElement('br');
+    buttons.push(createButton("Atividade 2"));
+    createElement('br');
+    createElement('br');
+    buttons.push(createButton("Atividade 3"));
+    createElement('br');
+    createElement('br');
+    buttons.push(createButton("Atividade 4"));
+    createElement('br');
+    createElement('br');
+    buttons.push(createButton("Atividade 5"));
+
+
+    buttons[0].mousePressed(() => {
+         deleteButtons(elementsActivity);
+         let nome = getSomething("Informa o seu Nome", "string");
+         let anoDeNascimento = getSomething("Informa o seu ano de nascimento", "number", 2018, 1900);
+
+         elementsActivity.push(createP("Seu nome é: " + nome));
+         elementsActivity.push(createP("Sua idade é: " + (2018 - anoDeNascimento)));
+      }
+    );
+
+    buttons[1].mousePressed(() => {
+         deleteButtons(elementsActivity);
+         let codigoPeca = getSomething("Me informe o código da peça: ", "number", 1000, 1);
+         let valor = getSomething("Me informe o valor da peça: ", "number", 10000, 1);
+         let quant = getSomething("Me informe a quantidade de peças: ", "number", 100, 1);
+
+         elementsActivity.push(createP("O código da peça é: " + codigoPeca));
+         elementsActivity.push(createP("O Valor total da compra é: " + (valor * quant)));
+      }
+    );
+
+    buttons[2].mousePressed(() => {
+         deleteButtons(elementsActivity);
+
+         elementsActivity.push(createP("10"));
+         elementsActivity.push(createP("255"));
+         elementsActivity.push(createP("11527"));
+         elementsActivity.push(createP("O resultado da multiplação dos 3 números é: " + (10 * 255 * 11527)));
+      }
+    );
+
+    buttons[3].mousePressed(() => {
+         deleteButtons(elementsActivity);
+         let num1 = getSomething("Informe um número", "number");
+         let num2 = getSomething("Informe um número", "number");
+         let num3 = getSomething("Informe um número", "number");
+
+         let result = num1 + num2 + num3;
+
+         elementsActivity.push(createP(num1));
+         elementsActivity.push(createP(num2));
+         elementsActivity.push(createP(num3));
+         elementsActivity.push(createP("O resultado da soma dos 3 números é: " + (result)));
+
+      }
+    );
+
+    buttons[4].mousePressed(() => {
+         deleteButtons(elementsActivity);
+         let sexo = getSomething("Informe seu sexo", "string", undefined, undefined, ["m", "f"]);
+         let idade = getSomething("Informe sua idade", "number", 114, 0);
+
+         let mensag = "m" == sexo ? "Você é um homem " : "Você é uma mulher";
+
+         elementsActivity.push(createP((idade >= 18) ? mensag + " maior de idade" : mensag + " menor de idade"));
+      }
+    );
+  }
+
+  function draw()
+  {
+    noLoop();
+  }
+
+  function deleteButtons(arrayButtons)
+  {
+      for (let i = 0; i < arrayButtons.length; i++)
+      {
+        if(arrayButtons[i])
+          arrayButtons[i].remove();
+      }
+  }
+
+  function getSomething(text, type, maxNumber, minNumber, restrinction)
+  {
+     if(type == "number")
+     {
+        if(maxNumber != undefined && minNumber == undefined)
+        {
+          let a;
+          while(isNaN(a) || !isNaN(a) && a >= maxNumber)
+          {
+              a = parseInt(prompt(text));
+          }
+          return a;
+        }
+
+        if(minNumber != undefined && maxNumber == undefined)
+        {
+         let a;
+         while(isNaN(a) || !isNaN(a) && a <= minNumber)
+         {
+             a = parseInt(prompt(text));
+         }
+         return a;
+        }
+
+        if(minNumber != undefined && maxNumber != undefined)
+        {
+         let a;
+         while(isNaN(a) || !isNaN(a) && a <= minNumber && a >= maxNumber)
+         {
+             a = parseInt(prompt(text));
+         }
+         return a;
+        }
+
+        if(maxNumber == undefined && minNumber == undefined)
+        {
+           let a;
+           while(isNaN(a) || !isNaN(a))
+           {
+               a = parseInt(prompt(text));
+           }
+           return a;
+        }
+     }
+
+     if(type == "string")
+     {
+
+        if(restrinction == undefined)
+        {
+          let a;
+          a = prompt(text);
+          return a;
+        }
+        else
+        {
+          let a;
+          while(!isInside([a], restrinction))
+          {
+             a = prompt(text);
+          }
+          return a;
+        }
+     }
+  }
+
+  function isInside(arr1, arr2)
+  {
+    for (let i = 0; i < arr1.length; i++) {
+      for (let j = 0; j < arr2.length; j++) {
+         if(arr1[i] && arr1[i] == arr2[j])
+          return true;
+      }
+    }
+
+    return false;
+  }
+
+  function ConvertDecimalToBinary(number)
+  {
+    let n = number;
+    let binary = "";
+    let bi = [];
+    while(true)
+    {
+      bi.push(Math.floor(number % 2));
+      number /= 2;
+      if(number < 2)
+      {
+        bi.push(1);
+        break;
+      }
+    }
+    for (var i = bi.length - 1; i >= 0; i--) {
+       binary += bi[i];
+    }
+    console.log(binary);
+  }
+
+  </script>
+
+</body>
+</html>

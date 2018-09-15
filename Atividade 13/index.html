@@ -1,0 +1,27 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+
+    <script language="javascript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.js"></script>
+    <script language="javascript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/addons/p5.dom.js"></script>
+    <title>Algoritmo - Atividade </title>
+</head>
+<body>
+    <p> Óbitos em 2009: <input type="number" id="nine"></p>
+    <p> Óbitos em 2010: <input type="number" id="ten"></p>
+    <button onclick="Calculate()"> Calcular Média </button>
+    <p id="media"></p>
+    <script>
+    
+    function Calculate()
+    {
+       let nine = parseInt(document.getElementById("nine").value);
+       let ten = parseInt(document.getElementById("ten").value);
+
+      document.getElementById("media").innerHTML = (nine + ten) / 2;
+      
+    }
+    
+    </script>
+</body>
+</html>

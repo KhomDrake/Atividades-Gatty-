@@ -1,0 +1,40 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+
+    <script language="javascript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.js"></script>
+    <script language="javascript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/addons/p5.dom.js"></script>
+    <title>Algoritmo - Atividade </title>
+</head>
+<body>
+    <p> Mês Vigente: <input type="text" id="mes"></p>
+    <p> Nome Funcionário: <input type="text" id="nome"></p>
+    <p> Peças Vendidas: <input type="number" id="pecas"></p>
+    <p> Preço Unitário das Peças: <input type="number" id="preco"></p>
+    <button onclick="Calculate()"> Gerar Folha de Pagamento</button>
+    <p id="month"></p>
+    <p id="name"></p>
+    <p id="pieces"></p>
+    <p id="price"></p>
+    <p id="INSS"></p>
+    <p id="bruto"></p>
+    <p id="liquido"></p>
+
+    <script>
+    
+    let month, name, pieces, price;
+    month = document.getElementById("mes").value;
+    name = document.getElementById("nome").value;
+    pieces = parseInt(document.getElementById("pecas").value);
+    price = parseFloat(document.getElementById("preco").value);
+    let bruto = 855 + (pieces * price);
+    document.getElementById("month").innerHTML = "Mês: " + month;
+    document.getElementById("name").innerHTML = "Nome Funcionário: " + name;
+    document.getElementById("pieces").innerHTML = "Quantidade de Peças: " + pieces;
+    document.getElementById("price").innerHTML = "Preço Unitário: " + price + "R$";
+    document.getElementById("INSS").innerHTML = "Desconto INSS(11%): " + (bruto * (11/100));
+    document.getElementById("bruto").innerHTML = "Salário Bruto: " + bruto;
+    document.getElementById("liquido").innerHTML = "Salário Liquido: " + (bruto - (bruto * (11/100)));
+    </script>
+</body>
+</html>

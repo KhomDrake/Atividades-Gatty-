@@ -1,0 +1,28 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+
+    <script language="javascript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.js"></script>
+    <script language="javascript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/addons/p5.dom.js"></script>
+    <title>Algoritmo - Atividade </title>
+</head>
+<body> 
+    <p> Quantidade Minima: <input type="number" id="minimo"></p>
+    <p> Quantidade Máxima: <input type="number" id="maximo"></p>
+    <button onclick="Calculate()"> Calcular </button>
+    <p id="result"></p>
+
+    <script>
+    
+    function Calculate() 
+    {
+       let min, max;
+       min = parseInt(document.getElementById("minimo").value);
+       max = parseInt(document.getElementById("maximo").value);  
+       document.getElementById("result").innerHTML = "Estoque Médio: " + (max + min) / 2;
+    }
+    
+    </script>
+
+</body>
+</html>
